@@ -14,6 +14,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRouting } from './app.routes';
 
+/// Awesome
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { SocialLoginModule } from 'angularx-social-login';
+import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+import { LoggedGuard } from './guard/logged.guard';
+
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('708399119620-4lelbjac87ho20ou38h3k1dc0kgudepk.apps.googleusercontent.com')
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('2122537388058894')
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -32,6 +53,8 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     AppRouting,
     HttpClientModule,
+    SocialLoginModule,
+    AngularFontAwesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -40,7 +63,12 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

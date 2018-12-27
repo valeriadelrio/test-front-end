@@ -10,6 +10,7 @@ export class AuthService {
   constructor( private http: HttpClient ) { }
 
   public signUp(payload) {
+    console.log('payload', payload);
     const endpoint = `login`;
     return this.http
       .post(endpoint, payload);

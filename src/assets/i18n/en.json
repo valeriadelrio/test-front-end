@@ -1,4 +1,13 @@
 {
   "action_cancel": "Action canceled",
-  "accept": "Accept"
+  "accept": "Accept",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "loginFacebook": "Login with Facebook",
+  "loginGoogle": "Login with Google",
+  "or": "or",
+  "required": "Required field",
+  "invalidEmail": "Invalid email"
+
 }

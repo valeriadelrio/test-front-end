@@ -1,0 +1,12 @@
+{
+  "action_cancel": "Acción cancelada",
+  "accept": "Aceptado",
+  "login": "Iniciar sesión",
+  "email": "Correo",
+  "password": "Contraseña",
+  "loginFacebook": "Iniciar sesión con Facebook",
+  "loginGoogle": "Iniciar sesión con Google",
+  "or": "o",
+  "required": "Campo requerido",
+  "invalidEmail": "Email invalido"
+}
