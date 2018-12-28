@@ -6,7 +6,8 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   ActivatedRoute,
-  RouterLink
+  RouterLink,
+  CanActivateChild
 } from '@angular/router';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
@@ -17,28 +18,30 @@ import { SocialUser } from 'angularx-social-login';
 
 
 @Injectable()
-export class LoggedGuard implements CanActivate {
+export class LoggedGuard implements CanActivate, CanActivateChild {
   data: any;
   user: SocialUser;
 
   constructor(
     private router: Router,
     @Inject(DOCUMENT) private document: any,
-    private storage: Storage,
     private authService: AuthService
   ) {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log(user);
-});
-    this.storage.setItem('token', this.user.authToken);
+      if (user !== null) {
+        router.navigate(['home']);
+      }
+      if (user === null) {
+        router.navigate(['login']);
+      }
+    });
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('aca esto en logged');
     return true;
   }
 
@@ -46,7 +49,10 @@ export class LoggedGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('en el child');
-   return null;
+    if (route.routeConfig.path === 'login' && this.user !== null) {
+      this.router.navigate(['home']);
+    }
+    console.log('Puede', route)
+    return !!this.user || route.routeConfig.path === 'login';
   }
 }

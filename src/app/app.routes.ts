@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { LoggedGuard } from './guard/logged.guard';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       {
         path: '',
+        canActivate: [LoggedGuard],
         children: [
           {
             path: 'login',
@@ -26,7 +28,8 @@ import { LoginComponent } from './login/login.component';
       },
     ])
   ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [LoggedGuard],
 })
 
 export class AppRouting {}

@@ -13,7 +13,7 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } fro
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   user: SocialUser;
@@ -66,8 +66,5 @@ export class LoginComponent implements OnInit {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
-  signOut(): void {
-    this.authService.signOut();
-}
-
+  
 }
