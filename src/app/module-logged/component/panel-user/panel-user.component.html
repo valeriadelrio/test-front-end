@@ -1,4 +1,7 @@
 <div class="content-panel">
-  <p (click)="signOut()">Logout</p>
+  <button class="button-logout" (click)="signOut()">
+    <mat-icon color="primary"> exit_to_app </mat-icon>
+    <p >{{'logout' | translate}}</p>
+  </button>
   <img class="profile-img" src="{{user.photoUrl || '../../../../assets/images/profile-image.png'}}" alt="">
 </div>

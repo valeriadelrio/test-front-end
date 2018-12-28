@@ -1,0 +1,41 @@
+#wrap {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 24px;
+  position: relative;
+  mat-icon {
+    top: 4px
+  }
+}
+
+#search {
+  height: 30px;
+  font-size: 14px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 24px;
+  width: 0px;
+  position: absolute;
+  top: -4px;
+  right: 24px;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+#search:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+#search:focus {
+  width: 300px;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}

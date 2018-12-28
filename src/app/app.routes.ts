@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LoggedGuard } from './guard/logged.guard';
+import { ResourcesComponent } from './module-logged/component/resources/resources.component';
 
 @NgModule({
   imports: [

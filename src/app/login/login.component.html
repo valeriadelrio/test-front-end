@@ -1,47 +1,11 @@
 <div class="login">
 
-  <div class="right">
-    <img src="./assets/images/logo-aivo.png" alt="logo">
-  </div>
   <div class="left">
     <mat-card>
-      <h2>{{'login' | translate}}</h2>
-      <form [formGroup]="userToLogin" (submit)="loginUser(userToLogin.value, userToLogin.valid)">
-        <div class="formControl">
-          <mat-form-field appearance="outline">
-            <mat-label>{{'email' | translate}}</mat-label>
-            <input #email matInput formControlName="email" type="email" placeholder="{{'email' | translate}}" required>
-            <mat-error *ngIf="userToLogin.controls['email'].errors &&
-                                    ( userToLogin.controls['email'].dirty || userToLogin.controls['email'].touched)">
-              <span *ngIf="userToLogin.controls['email'].hasError('required')" class="msjError"> {{'required' | translate}}
-                    </span>
-              <span *ngIf="userToLogin.controls['email'].hasError('invalidEmailAddress')" class="msjError"> {{'invalidEmail' | translate}}
-                    </span>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="formControl">
-          <mat-form-field appearance="outline">
-            <mat-label>{{'password' | translate}}</mat-label>
-            <input #password matInput formControlName="password" type="password" placeholder="{{'password' | translate}}" required>
-            <mat-error *ngIf="userToLogin.controls['password'].errors &&
-                                    ( userToLogin.controls['password'].dirty || userToLogin.controls['password'].touched)">
-              <span *ngIf="userToLogin.controls['password'].hasError('required')" class="msjError">{{'required' | translate}}
-                    </span>
-            </mat-error>
-          </mat-form-field>
-          <div class="d-flex justify-content-end">
-          </div>
-        </div>
-        <button mat-raised-button [disabled]="!userToLogin.valid" type="submit" class="btn-login">{{'login' | translate}}</button>
-      </form>
-
-      <div class="divider">
-        <mat-divider [inset]="true"> </mat-divider>
-        <span>{{'or' | translate}}</span>
-        <mat-divider> </mat-divider>
+      <div class="content-image">
+        <img src="./assets/images/logo-aivo.png" alt="logo">
       </div>
-
+      <mat-divider [inset]="true"> </mat-divider>
       <ul>
         <a (click)="signInWithFB()" class="social-button" id="facebook-connect"> <span>{{'loginFacebook' | translate}}</span></a>
         <a (click)="signInWithGoogle()" class="social-button" id="google-connect"> <span>{{'loginGoogle' | translate}}</span></a>

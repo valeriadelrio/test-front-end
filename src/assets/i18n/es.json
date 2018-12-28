@@ -2,11 +2,15 @@
   "action_cancel": "Acción cancelada",
   "accept": "Aceptado",
   "login": "Iniciar sesión",
-  "email": "Correo",
-  "password": "Contraseña",
   "loginFacebook": "Iniciar sesión con Facebook",
   "loginGoogle": "Iniciar sesión con Google",
-  "or": "o",
-  "required": "Campo requerido",
-  "invalidEmail": "Email invalido"
+  "logout": "Salir",
+  "delete": "Eliminar",
+  "delete_resource": "Eliminar data?",
+  "cancel": "Cancelar",
+  "delete_success": "Eliminado correctamente",
+  "resources": "Resources",
+  "general": "General",
+  "edit": "Editar",
+  "view_more": "Ver mas"
 }

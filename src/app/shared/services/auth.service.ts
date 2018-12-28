@@ -16,24 +16,4 @@ export class AuthService {
       .post(endpoint, payload);
   }
 
-  // logOut() {
-  //   const endpoint = `logOut`;
-  //   return this.http
-  //     .post(endpoint, null)
-  //     .toPromise()
-  //     .then((response: any) => {
-  //       if (response.status === 200) {
-  //         this.cookieService.set(
-  //           'Token',
-  //           'expired',
-  //           null,
-  //           '/',
-  //           environment.cookieDom
-  //         );
-  //         this.storageService.store('loggedIn', 'false');
-  //       }
-  //       this.cookieService.delete('Token');
-  //     });
-  // }
-
 }

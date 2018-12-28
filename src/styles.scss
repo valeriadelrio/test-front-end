@@ -1,9 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
+$fontOpacity: 0.87;
+$primaryColor: #10459c;
+$thirdColor: #008a73;
+$iconOpacity: 0.54;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+//Alertify
+.ajs-button {
+  background-color: $thirdColor;
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 88px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 600;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.ajs-header {
+  color: $primaryColor;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.ajs-body .ajs-content {
+  opacity: $fontOpacity;
+  padding: 16px 0 !important;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.ajs-commands {
+  margin: -15px 13px 0 0 !important;
+}
+
+.ajs-footer .ajs-buttons.ajs-primary {
+  padding: 0 17px 13px 0;
+}
+
+.ajs-close {
+  background: none !important;
+  &::before {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    color: #000000;
+    opacity: $iconOpacity;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    content: "close";
+  }
+}
+
+.ajs-header {
+  text-transform: none!important;
+}
+
+.ajs-header::first-letter {
+  text-transform: capitalize!important;
+}
+
+.alertify-notifier,
+.ajs-message {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
 }

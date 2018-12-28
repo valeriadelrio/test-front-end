@@ -1,0 +1,12 @@
+<div class="icons-box">
+  <mat-icon *ngIf="showView" (click)="handleClickIcon('view', view)" [ngClass]="{'-iconTableDisabled': !view || disabledAll}" class="-iconTable view" matTooltip="{{'view_more' | translate | titlecase}}">
+    visibility
+  </mat-icon>
+  <mat-icon *ngIf="showEdit" (click)="handleClickIcon('edit', edit)" [ngClass]="{'-iconTableDisabled': !edit || disabledAll}" class="-iconTable edit" matTooltip="{{'edit' | translate | titlecase}}">
+    edit_outline
+  </mat-icon>
+  <mat-icon *ngIf="showDelete" (click)="handleClickIcon('delete', delete)" [ngClass]="{'-iconTableDisabled': !delete || disabledAll}" class="-iconTable delete" matTooltip="{{'delete' | translate | titlecase}}">
+    cancel_outline
+  </mat-icon>
+
+</div>

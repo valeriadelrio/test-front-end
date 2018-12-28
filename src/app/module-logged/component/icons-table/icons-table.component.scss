@@ -1,0 +1,39 @@
+$actionHoverView: #007eb7;
+$actionHoverEdit: #e48423;
+$actionHoverDelete: red;
+$iconOpacity: 0.54;
+.icons-box {
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  .-iconTable {
+    font-size: 20px;
+    height: 20px;
+    opacity: $iconOpacity;
+    margin: 0 9px;
+    cursor: pointer;
+    font-weight: bolder;
+    &::last-child {
+      margin: 0;
+    }
+  }
+  .-iconTableDisabled {
+    opacity: 0.10;
+    cursor: no-drop;
+  }
+  .-iconSettings {
+    opacity: 0.70;
+  }
+}
+
+.view:hover {
+  color: $actionHoverView;
+}
+
+.edit:hover {
+  color: $actionHoverEdit;
+}
+
+.delete:hover {
+  color: $actionHoverDelete;
+}

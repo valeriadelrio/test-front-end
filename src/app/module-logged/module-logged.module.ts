@@ -10,6 +10,12 @@ import { LoginComponent } from '../login/login.component';
 import { MaterialModule } from '../material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelUserComponent } from './component/panel-user/panel-user.component';
+import { RowTableComponent } from './component/row-table/row-table.component';
+import { IconsTableComponent } from './component/icons-table/icons-table.component';
+import { ResourcesComponent } from './component/resources/resources.component';
+import { HeaderComponent } from './component/header/header.component';
+import { SubHeaderComponent } from './component/sub-header/sub-header.component';
+import { SearchComponent } from './component/search/search.component';
 
 // Components
 
@@ -26,6 +32,12 @@ import { PanelUserComponent } from './component/panel-user/panel-user.component'
   declarations: [
     HomeComponent,
     PanelUserComponent,
+    RowTableComponent,
+    IconsTableComponent,
+    ResourcesComponent,
+    HeaderComponent,
+    SubHeaderComponent,
+    SearchComponent,
   ]
 })
 export class LoggedModule { }

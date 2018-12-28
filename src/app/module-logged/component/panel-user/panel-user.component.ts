@@ -14,9 +14,8 @@ export class PanelUserComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
-      console.log(user);
+      console.log('user en panel',this.user);
 });
-    // console.log(this._storage.getItem('token'));
 
   }
   signOut(): void {

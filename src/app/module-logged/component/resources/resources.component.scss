@@ -1,0 +1,28 @@
+.resources-content {
+  .container-table-app {
+    overflow-x: auto;
+    .table-resources {
+      width: 100%;
+      min-width: 1000px;
+      .colT {
+        width: calc(100% / 5);
+        text-align: start;
+      }
+      .header-table {
+        border-bottom: 1px solid #d3d3d3;
+        padding: 15px;
+        padding-bottom: 5px;
+        span {
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+      .body-table {
+        height: calc(100vh - 242px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
+  }
+}

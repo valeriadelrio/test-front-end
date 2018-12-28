@@ -2,12 +2,17 @@
   "action_cancel": "Action canceled",
   "accept": "Accept",
   "login": "Login",
-  "email": "Email",
-  "password": "Password",
   "loginFacebook": "Login with Facebook",
   "loginGoogle": "Login with Google",
-  "or": "or",
-  "required": "Required field",
-  "invalidEmail": "Invalid email"
+  "logout": "Logout",
+  "delete": "Delete",
+  "delete_resource": "Delete resource?",
+  "cancel": "Cancel",
+  "delete_success": "Delete success",
+  "resources": "Resources",
+  "general": "General",
+  "edit": "Edit",
+  "view_more": "View more"
+
 
 }
