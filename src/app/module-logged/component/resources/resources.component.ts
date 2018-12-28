@@ -3,7 +3,8 @@ import * as alertify from 'alertifyjs';
 import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
 import { ResourceService } from '../../../shared/services/resources.service';
-import { MatPaginator } from '@angular/material';
+import { MatPaginator, MatDialogConfig, MatDialog } from '@angular/material';
+import { ModalResourceComponent } from '../modal-resource/modal-resource.component';
 @Component({
   selector: 'app-resources',
   templateUrl: './resources.component.html',
@@ -19,7 +20,8 @@ export class ResourcesComponent implements OnInit {
 
 
   constructor(private translate: TranslateService,
-              private resources: ResourceService) {
+              private resources: ResourceService,
+              private dialog: MatDialog) {
                 this.pageIndex = 0;
                 this.pageSize = 15;
                }
@@ -41,6 +43,30 @@ export class ResourcesComponent implements OnInit {
     this.dataTable.splice(indexRowDelete, 1);
   }
 
+  getInfoRow(id: number) {
+    const indexRowDelete = _.findIndex(this.dataTable, function(o) {
+      if (o.id === id) {
+       return indexRowDelete;
+      }
+    });
+  }
+
+  showView(event: any) {
+    this.resources.getResourceById(event.id).toPromise().then((data: any) => {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.width = '50%';
+      dialogConfig.data = {
+        compactView: false,
+        loading: false,
+        dataRow: data,
+        showBorder: true
+      };
+      this.dialog.open(ModalResourceComponent, dialogConfig);
+    });
+  }
+
+
 
   clickIcon(event: any) {
     this.loading = true;
@@ -48,6 +74,7 @@ export class ResourcesComponent implements OnInit {
     switch (event.event) {
       case 'view':
         // openModal
+        this.showView(event);
         break;
       case 'delete':
         alertify

@@ -9,6 +9,7 @@
   mat-sidenav {
     background-color: #3f51b5;
     mat-nav-list {
+      padding-left: 8px;
       .items {
         display: flex;
         align-content: center;

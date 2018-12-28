@@ -16,6 +16,7 @@ import { ResourcesComponent } from './component/resources/resources.component';
 import { HeaderComponent } from './component/header/header.component';
 import { SubHeaderComponent } from './component/sub-header/sub-header.component';
 import { SearchComponent } from './component/search/search.component';
+import { ModalResourceComponent } from './component/modal-resource/modal-resource.component';
 
 // Components
 
@@ -38,6 +39,10 @@ import { SearchComponent } from './component/search/search.component';
     HeaderComponent,
     SubHeaderComponent,
     SearchComponent,
+    ModalResourceComponent,
+  ],
+  entryComponents: [
+    ModalResourceComponent
   ]
 })
 export class LoggedModule { }

@@ -1,0 +1,19 @@
+.content-modal {
+  display: inline-block;
+  text-align: center;
+  // .title {
+  //   text-transform: capitalize;
+  //   font-size: 14px;
+  // }
+  .items {
+    display: flex;
+    align-content: center;
+    // align-items: center;
+    p:first-child {
+      color: #3f51b5;
+    }
+    p {
+      padding-right: 4px;
+    }
+  }
+}

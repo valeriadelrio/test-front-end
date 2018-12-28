@@ -10,14 +10,16 @@ export class ResourceService {
   constructor( private http: HttpClient ) { }
 
   public getResource() {
-    // const url = 'https://jsonplaceholder.typicode.com/posts';
     return this.http.get(this.url);
-    // return fetch(url);
   }
 
   public deleteResource(id: number) {
     const url = this.url + `/${id}`;
-    console.log('url del delete', url);
     return this.http.delete(url);
+  }
+
+  public getResourceById(id: number) {
+    const url = this.url + `/${id}`;
+    return this.http.get(url);
   }
 }
