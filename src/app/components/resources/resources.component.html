@@ -1,0 +1,32 @@
+<div class="resources-content">
+  <app-search [data]="dataTable" [fields]="['user.name', 'id', 'title', 'body']" (filterChange)="updateFilteredData($event)"></app-search>
+  <div class="container-table-app">
+    <div class="table-resources">
+      <div class="header-table d-flex justify-content-between">
+        <div class="colT">
+          <span>{{'user' | translate | uppercase}}</span>
+        </div>
+        <div class="colT">
+          <span>{{'postId' | translate | uppercase}}</span>
+        </div>
+        <div class="colT">
+          <span>{{'title' | translate | uppercase}}</span>
+        </div>
+        <div class="colT">
+          <span>{{'body' | translate | uppercase}}</span>
+        </div>
+        <div class="colT">
+          <span>{{'actions' | translate | uppercase}}</span>
+        </div>
+      </div>
+      <div class="body-table">
+        <app-row-table *ngFor="let row of filteredDataTable | paginate: { itemsPerPage: pageSize, currentPage: pageIndex }; let o = odd; let e = even;" [data]="row" (clickIcon)="clickIcon($event)" (eventPaginator)="getResources($event)" [bg]="o ? 'o' : 'e'">
+        </app-row-table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-between align-items-center" >
+  <mat-paginator #paginator [length]="filteredDataTable?.length" [pageSize]="pageSize" [hidePageSize]="true" class="paginator" (page)="pageChange($event)">
+  </mat-paginator>
+</div>

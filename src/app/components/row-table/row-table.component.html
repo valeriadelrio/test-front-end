@@ -1,0 +1,20 @@
+<div class="row-table-resources d-flex row justify-content-between" [ngClass]="{'bgGrey': bg === 'e'}">
+  <div class="colT d-flex flex-column">
+    <span class="salient-info">{{data?.user?.name}}</span>
+  </div>
+  <div class="colT d-flex flex-column">
+    <span class="salient-info">{{data?.id}}</span>
+  </div>
+  <div class="colT d-flex flex-column">
+    <span class="salient-info">{{data?.title}}</span>
+  </div>
+  <div class="colT d-flex flex-column">
+    <span class="salient-info">{{data?.body}}</span>
+  </div>
+
+  <div class="colT">
+    <app-icons-table [showEdit]="true" [showView]="true" [showDelete]="true" [edit]="true" [view]="true" [delete]="true" (onclick)="clickIconTable($event, data.id)">
+    </app-icons-table>
+  </div>
+
+</div>

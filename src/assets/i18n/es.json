@@ -1,16 +1,25 @@
 {
   "action_cancel": "Acción cancelada",
-  "accept": "Aceptado",
+  "accept": "Aceptar",
   "login": "Iniciar sesión",
   "loginFacebook": "Iniciar sesión con Facebook",
   "loginGoogle": "Iniciar sesión con Google",
   "logout": "Salir",
   "delete": "Eliminar",
-  "delete_resource": "Eliminar data?",
+  "delete_resource": "¿Eliminar post?",
   "cancel": "Cancelar",
   "delete_success": "Eliminado correctamente",
-  "resources": "Resources",
+  "resources": "Posts",
   "general": "General",
   "edit": "Editar",
-  "view_more": "Ver mas"
+  "view_more": "Ver mas",
+  "information": "Información del post",
+  "save": "Guardar",
+  "update_success": "Actualizado correctamente",
+  "user": "Usuario",
+  "postId": "ID Post",
+  "title": "Titulo",
+  "body": "Contenido",
+  "actions": "Acciones"
+
 }

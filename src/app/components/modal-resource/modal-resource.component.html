@@ -1,0 +1,24 @@
+<div class="content-modal">
+  <h2 class="title">{{'information' | translate | uppercase }} </h2>
+  <form [formGroup]="postForm" class="d-flex flex-column" (ngSubmit)="onSubmit(postForm.value, postForm.controls.id.value)" novalidate>
+    <mat-form-field class="content-input">
+      <input class="form-control" matInput placeholder="USER" formControlName="user">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input class="form-control" matInput placeholder="ID POST" formControlName="id" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input class="form-control" matInput placeholder="TITLE" formControlName="title" [disabled]="!edit">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea class="form-control" matInput placeholder="BODY" formControlName="body" [disabled]="!edit"></textarea>
+    </mat-form-field>
+    <div *ngIf="edit" class="button-save" >
+        <button mat-raised-button>{{'save' | translate | uppercase}}</button>
+    </div>  
+  </form>
+  
+  
+
+</div>

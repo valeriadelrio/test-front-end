@@ -1,0 +1,18 @@
+<div class="login">
+
+  <div class="left">
+    <mat-card>
+      <div class="content-image">
+        <img src="./assets/images/logo-aivo.png" alt="logo">
+      </div>
+      <mat-divider [inset]="true"> </mat-divider>
+      <ul class="content-button">
+        <a (click)="signInWithFB()" class="social-button" id="facebook-connect"> <span>{{'loginFacebook' | translate}}</span></a>
+        <a (click)="signInWithGoogle()" class="social-button" id="google-connect"> <span>{{'loginGoogle' | translate}}</span></a>
+      </ul>
+    </mat-card>
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>

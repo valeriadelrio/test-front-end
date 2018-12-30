@@ -1,32 +1,28 @@
 import { NgModule } from '@angular/core';
 
 import {RouterModule} from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { LoggedGuard } from './guard/logged.guard';
-import { ResourcesComponent } from './module-logged/component/resources/resources.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'login',
         canActivate: [LoggedGuard],
-        children: [
-          {
-            path: 'login',
-            component: LoginComponent,
-          },
-          {
-            path: 'home',
-            loadChildren: './module-logged/module-logged.module#LoggedModule'
-          },
-          {
-            path: '**',
-            redirectTo: 'login',
-            pathMatch: 'full'
-          }
-        ]
+        component: LoginComponent,
       },
+      {
+        path: 'resources',
+        canActivate: [LoggedGuard],
+        component: HomeComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'login',
+        pathMatch: 'full'
+      }
     ])
   ],
   exports: [ RouterModule ],

@@ -6,13 +6,20 @@
   "loginGoogle": "Login with Google",
   "logout": "Logout",
   "delete": "Delete",
-  "delete_resource": "Delete resource?",
+  "delete_resource": "Delete post?",
   "cancel": "Cancel",
   "delete_success": "Delete success",
   "resources": "Resources",
   "general": "General",
   "edit": "Edit",
-  "view_more": "View more"
-
+  "view_more": "View more",
+  "information": "Post Information ",
+  "save": "Save",
+  "update_success": "Update success",
+  "user": "User",
+  "postId": "Post ID",
+  "title": "Title",
+  "body": "Content",
+  "actions": "Actions"
 
 }

@@ -30,7 +30,7 @@ export class LoggedGuard implements CanActivate, CanActivateChild {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       if (user !== null) {
-        router.navigate(['home']);
+        router.navigate(['resources']);
       }
       if (user === null) {
         router.navigate(['login']);
@@ -50,9 +50,8 @@ export class LoggedGuard implements CanActivate, CanActivateChild {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     if (route.routeConfig.path === 'login' && this.user !== null) {
-      this.router.navigate(['home']);
+      this.router.navigate(['resources']);
     }
-    console.log('Puede', route)
     return !!this.user || route.routeConfig.path === 'login';
   }
 }

@@ -1,0 +1,35 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidenav-container {
+  height: 100%;
+  background-color: white;
+  mat-sidenav {
+    min-width: 200px;
+    background-color: #3f51b5;
+    mat-nav-list {
+      padding-left: 8px;
+      .items {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        mat-icon {
+          color: white;
+        }
+      }
+      .title {
+        color: white;
+        font-size: 9px;
+        padding-bottom: 4px;
+      }
+      a {
+        color: white;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 12px;
+      }
+    }
+  }
+}
