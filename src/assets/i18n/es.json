@@ -20,6 +20,7 @@
   "postId": "ID Post",
   "title": "Titulo",
   "body": "Contenido",
-  "actions": "Acciones"
-
+  "actions": "Acciones",
+  "login_error_title": "Login Error",
+  "login_error_message": "Ha ocurrido un error con el Social Login: {{message}}"
 }

@@ -4,24 +4,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run npm install when the project is cloned.
+
+Run `json-server --watch db.json` to execute the server (mock back-end). This will run in http://localhost:3000
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Specifications
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Resource Aivo contains: 
+* Social Login with Google and Facebook using angularx-social-login library. *See extra considerations*
+* Unit test with a coverage greater than 80%.
+* I18n support. The language will be the one defined on the browser. The supported language are English & Spanish. By default the language is English.
 
-## Further help
+## Extra Considerations
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+As the Facebook app is still in development you should use the following testing user for login:
+```
+email: aivo_rjvrgku_test@tfbnw.net
+password: 1*2*3*4*5*6*
+```

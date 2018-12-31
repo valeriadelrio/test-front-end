@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NumberSymbol } from '@angular/common';
 
 interface Posts {
   user: any,

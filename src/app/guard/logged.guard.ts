@@ -12,13 +12,12 @@ import {
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 
-
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 
 
 @Injectable()
-export class LoggedGuard implements CanActivate, CanActivateChild {
+export class LoggedGuard implements CanActivate {
   data: any;
   user: SocialUser;
 
@@ -42,16 +41,15 @@ export class LoggedGuard implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return true;
-  }
-
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
-    if (route.routeConfig.path === 'login' && this.user !== null) {
+    const isLogin = route.routeConfig.path === 'login';
+    const loggedIn = !_.isNil(this.user);
+    if (!loggedIn && !isLogin) {
+      this.router.navigate(['login']);
+    }
+    if (loggedIn && isLogin) {
       this.router.navigate(['resources']);
     }
-    return !!this.user || route.routeConfig.path === 'login';
+    return true;
   }
+  
 }

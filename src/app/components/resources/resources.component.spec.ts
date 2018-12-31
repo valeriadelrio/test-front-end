@@ -10,7 +10,6 @@ import { IconsTableComponent } from '../icons-table/icons-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { PostsServiceStub } from 'src/app/shared/services/posts.service.stub';
-import { post } from 'selenium-webdriver/http';
 import { of } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
